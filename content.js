@@ -9,7 +9,16 @@ function highlightDocs() {
     if (highlightBtn) {
         clickAndSelectColor(highlightBtn, "yellow");
     } else {
-        console.warn("Extension: Highlight button not found.");
+        // highlight button not found, try searching for the "More Options" button
+        const moreButton = findElement('#moreButton');
+        if (moreButton) {
+            simulateClick(moreButton);
+
+            const expandedHighlightBtn = findElement('#bgColorButton');
+            if (expandedHighlightBtn) {
+                clickAndSelectColor(expandedHighlightBtn, "yellow");
+            }
+        }
     }
 }
 
