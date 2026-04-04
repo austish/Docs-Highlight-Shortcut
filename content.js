@@ -18,6 +18,9 @@ function highlightDocs() {
             if (expandedHighlightBtn) {
                 clickAndSelectColor(expandedHighlightBtn, "yellow");
             }
+
+            // hide more options after opening it
+            simulateClick(moreButton);
         }
     }
 }
